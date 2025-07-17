@@ -1,5 +1,5 @@
 import { useClerk } from '@clerk/clerk-expo';
-import * as Linking from 'expo-linking';
+import Linking from 'expo-linking';
 import { Text, TouchableOpacity } from 'react-native';
 
 export const SignOutButton = () => {

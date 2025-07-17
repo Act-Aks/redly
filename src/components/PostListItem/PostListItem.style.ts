@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         borderBottomColor: 'lightgrey',
         borderBottomWidth: 0.5,
         backgroundColor: 'white',
+        borderRadius: 12,
     },
     headerContainer: {
         flexDirection: 'row',

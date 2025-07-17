@@ -10,7 +10,7 @@ export default function HomeScreen() {
             keyExtractor={(item) => item.id}
             renderItem={({ item: post }) => <PostListItem post={post} />}
             showsVerticalScrollIndicator={false}
-            style={{ flex: 1, backgroundColor: 'red', padding: 16 }}
+            style={{ flex: 1, padding: 16 }}
         />
     );
 }

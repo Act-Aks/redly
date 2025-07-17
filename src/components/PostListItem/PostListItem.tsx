@@ -21,7 +21,12 @@ export const PostListItem: React.FC<PostListItemProps> = ({ post, isDetailedPost
                         <Text style={styles.postDate}>{formatDistanceToNowStrict(new Date(post.created_at))}</Text>
                         {isDetailedPost && <Text style={styles.postUserName}>{post.user.name}</Text>}
                     </View>
-                    <Pressable onPress={() => {}} style={styles.joinBtn}>
+                    <Pressable
+                        onPress={() => {
+                            console.warn('click');
+                        }}
+                        style={styles.joinBtn}
+                    >
                         <Text style={styles.joinBtnTitle}>Join</Text>
                     </Pressable>
                 </View>

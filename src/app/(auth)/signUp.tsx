@@ -43,8 +43,11 @@ export default function SignUpScreen() {
 
             await signUp.prepareEmailAddressVerification({ strategy: 'email_code' });
             setPendingVerification(true);
-        } catch (err: any) {
-            Alert.alert('Error', err.errors?.[0]?.message || 'Something went wrong');
+        } catch (err: unknown) {
+            Alert.alert(
+                'Error',
+                (err as { errors?: [{ message?: string | undefined }] })?.errors?.[0]?.message || 'Something went wrong'
+            );
         } finally {
             setLoading(false);
         }
@@ -70,8 +73,12 @@ export default function SignUpScreen() {
                 await setActive({ session: signUpAttempt.createdSessionId });
                 router.replace('/');
             }
-        } catch (err: any) {
-            Alert.alert('Error', err.errors?.[0]?.message || 'Invalid verification code');
+        } catch (err: unknown) {
+            Alert.alert(
+                'Error',
+                (err as { errors?: [{ message?: string | undefined }] })?.errors?.[0]?.message ||
+                    'Invalid verification code'
+            );
         } finally {
             setLoading(false);
         }

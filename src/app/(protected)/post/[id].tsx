@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 
-export default function InboxScreen() {
+export default function PostDetails() {
     return (
         <View>
-            <Text>inbox</Text>
+            <Text>PostDetails</Text>
         </View>
     );
 }

@@ -43,8 +43,12 @@ export default function SignInScreen() {
                 await setActive({ session: signInAttempt.createdSessionId });
                 router.replace('/');
             }
-        } catch (err: any) {
-            Alert.alert('Error', err.errors?.[0]?.message || 'Invalid email or password');
+        } catch (err: unknown) {
+            Alert.alert(
+                'Error',
+                (err as { errors?: [{ message?: string | undefined }] })?.errors?.[0]?.message ||
+                    'Invalid email or password'
+            );
         } finally {
             setLoading(false);
         }
