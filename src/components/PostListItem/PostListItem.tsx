@@ -1,8 +1,8 @@
+import type { Post } from '@app/types';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { Link } from 'expo-router';
 import { Image, Pressable, Text, View } from 'react-native';
-import type { Post } from '../../types';
 import { styles } from './PostListItem.style';
 
 type PostListItemProps = {
